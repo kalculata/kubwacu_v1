@@ -1,0 +1,55 @@
+<ul class="manage-ctg-l-container">
+	{% for category in data %}
+		<li class="manage-ctg-l-i">
+			<div class="manage-ctg-category">
+				<span><i class="{{category.logotype}}"></i> {{category.name}}</span>
+				<span class="logo"><i class="fas fa-plus"></i></span>
+			</div>
+			<ul class="manage-ctg-subcategory">
+				{% for sub_category in category.subCategory %}
+					<li class="subcategory">
+						<span>{{sub_category}}</span>
+					</li>
+					<span id="{{sub_category}}" class="manage-sctg-delete {{category.id}}">
+						<div style="display:none">
+							<span class="id">{{category.id}}</span>
+							<span class="ctg">{{category.name}}</span>
+							<span class="s-ctg">{{sub_category}}</span>
+						</div>
+						<i class="fas fa-times" id=""></i>
+					</span>
+					<script type="text/javascript">
+						(function(){
+							var filter = $('.manage-sctg-delete').filter('.{{category.id}}')
+																 .filter('#{{sub_category}}'),
+								id = filter.find('.id').text(),
+								category = filter.find('.ctg').text(),
+								subCategory = filter.find('.s-ctg').text();	
+
+							filter.on('click', function(e){
+								$('#pop-up').css({'display':'block'	});
+								$('#subcategory-todelete').text(subCategory);
+								$('#category-container').text(category);
+								$('#del-subcategory-link').attr('href', "{{path('admin.del-subcategory')}}?subcategory="+subCategory+"&category="+category+"&in="+id);
+							});
+
+						})();
+					</script>
+				{% endfor %}
+			</ul>
+		</li>
+		<span id="manage-ctg-delete"><i class="fas fa-trash-alt"></i></span>
+	{% endfor %}
+</ul>
+<div id="pop-up" >
+	<div class="message-c">
+		<p>
+			Vous êtes sûr de vouloir la sous-catégorie "<strong id="subcategory-todelete"></strong>" de la catégorie "<strong id="category-container"></strong>" ?
+			<ul class="pop-up-choise">
+				<li><a href="" class="choise yes" id="del-subcategory-link">Oui</a></li>
+				<li><span class="choise no" id="choise-no">Non</span></li>
+			</ul>	
+		</p>
+	</div>
+</div>
+<script type="text/javascript" src="{{asset('/js/manage_ctgs.js')}}"></script>

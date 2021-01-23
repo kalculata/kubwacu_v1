@@ -1,0 +1,8 @@
+{{ form_start(addSubCategoryForm,{'action':path('add.sub_category')} ) }}
+	{{ form_label(addSubCategoryForm.name, "Sélectionner la catégorie") }}
+	{{ form_widget(addSubCategoryForm.name, {'attr': {'class': 'category'}}) }}
+	{{ form_label(addSubCategoryForm.sub_category, "Nom de la sous-catégorie") }}
+	{{ form_widget(addSubCategoryForm.sub_category, {'attr': {'class': 'category'}}) }}
+	<button type="submit" class="bt-global" name="add-sub-category">Ajouter</button>
+	{{ form_rest(addSubCategoryForm) }}
+ {{ form_end(addSubCategoryForm) }}

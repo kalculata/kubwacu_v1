@@ -1,0 +1,66 @@
+<div class="overlayer" id="team_member_profil">
+	<div class="overlayer_box team_member_profil_container" id="team_member_profil_container">
+		<div class="loader"></div>
+		<div class="content"></div>
+	</div>
+	<div class="overlayer_hidden_bt" id="team_member_profil_hidden_bt">
+		<i class="fas fa-times"></i>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).on('click','.teamList-card', function(){
+		let user_selected_id = $(this).children('span').html();
+		$('#team_member_profil').css('display','block');
+		$('#team_member_profil_container .content').css('display','none');
+		$('#team_member_profil_container .loader').css('display','block');
+
+		$.ajax({
+			url: 'https://www.kubwacu.com/public/api/viewAdminSec/'+user_selected_id,
+			dataType: 'json'
+		}).done(function(data){
+			$('#team_member_profil_container .content').html('');
+
+			data.forEach( function(element, index) {
+				let infos = 
+				'<div class="team_member_profil">'+
+					'<i class="fas fa-user"></i>'+
+				'</div>'+
+				'<div class="team_member_infos" id="team_member_infos">'+
+					'<ul>'+
+						'<li>'+
+							'<span class="infos">Nom et prénom</span>'+
+							'<span class="infos_content">'+element.familyname+' '+element.firstname+'</span>'+
+						'</li>'+
+						'<li>'+
+							'<span class="infos">Rôle</span>'+
+							'<span class="infos_content">'+element.job+'</span>'+
+						'</li>'+
+						'<li>'+
+							'<span class="infos">Sexe</span>'+
+							'<span class="infos_content">'+element.sexe+'</span>'+
+						'</li>'+
+						'<li>'+
+							'<span class="infos">Email</span>'+
+							'<span class="infos_content">'+element.email+'</span>'+
+						'</li>'+
+						/*'<li>'+
+							'<span class="infos">Nombre d\'articles</span>'+
+							'<span class="infos_content">100</span>'+
+						'</li>'+
+						'<li>'+
+							'<span class="infos">Langue utilisés</span>'+
+							'<span class="infos_content">Français et Kirundi</span>'+
+						'</li>'+
+						'<li>'+
+							'<span class="button-2 edit">Voir ses articles</span>'+	
+						'</li>'+*/
+					'</ul>'+
+				'</div>';
+				$('#team_member_profil_container .content').append(infos);
+			});
+			$('#team_member_profil_container .loader').css('display','none');
+			$('#team_member_profil_container .content').css('display','flex');
+		});
+		
+	});
+</script>

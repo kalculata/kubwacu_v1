@@ -1,0 +1,51 @@
+.home-container{
+	background-color: #fff;
+	width: 400px;
+	margin: 70px auto;
+	padding: 10px;
+	border: 2px solid #eee;
+
+}
+.home-c{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.home-i-container{
+	margin: 10px;
+	display:block;
+	width: 170px;
+	text-align: center;
+	background-color: #fff;
+	color: #1565c0;
+	border: 1px solid;
+	border-radius: 3px;
+	transition: 0.2s all;
+	font-size: 0.9em
+}
+.home-i-container:hover{
+	background-color: #F5F5F5;
+}
+.home-i-cover i{
+	font-size: 3.5em;
+	position: relative;
+		bottom: -20px
+}
+.home-i-cover{
+	height: 100px;
+}
+@media screen and (max-width: 450px){
+	.home-container{
+		width: 90%;
+	}
+	.home-i-cover{
+		height: 70px;
+	}
+	.home-i-container{
+		margin: 7px;
+		width: 120px;
+	}
+	.home-i-cover i{
+		font-size: 2.45em
+	}
+}

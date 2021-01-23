@@ -1,0 +1,29 @@
+{% for message in app.flashes('success') %}
+	<div class="message-banner">
+		<span class="message success">
+			{{message}}
+		</span>
+	</div>	
+{% endfor %}
+{% for message in app.flashes('error') %}
+	<div class="message-banner">
+		<span class="message error">
+			{{message}}
+		</span>
+	</div>	
+{% endfor %}
+<div class="manage-ctg-w">
+	<div class="manage-ctg-forms">
+		<div class="ctg-add">
+			<h3>Créer une nouvelle catégorie</h3>
+			{{render(controller('App\\Controller\\ArticleCategoryController:addCategory'))}}
+		</div>
+		<div class="sub-ctg-add">
+			<h3>Ajouter des sous-catégories</h3>
+			{{render(controller('App\\Controller\\ArticleCategoryController:addSubCategory'))}}
+		</div>
+	</div>
+	<div class="manage-ctg-l">
+		{{render(controller('App\\Controller\\ArticleCategoryController:viewAllCategory'))}}
+	</div>
+</div>

@@ -1,0 +1,9 @@
+ {{ form_start(addCategoryForm,{'action': path('add_category')} ) }}
+	 {{ form_label(addCategoryForm.name, "Nom de la catégorie") }}
+	 {{ form_widget(addCategoryForm.name, {'attr': {'class': 'category', 'placeholder':'Entrer le nom de la catégorie'}}) }}
+	 {{ form_label(addCategoryForm.logotype, "Logo type") }}
+	 {{ form_widget(addCategoryForm.logotype, {'attr': {'class': 'category', 'placeholder':'Ex: fas fa-home'}}) }}
+	  <button type="submit" class="bt-global" name="add-category">Créer</button>
+	 {{ form_rest(addCategoryForm) }}
+	 
+ {{ form_end(addCategoryForm) }}

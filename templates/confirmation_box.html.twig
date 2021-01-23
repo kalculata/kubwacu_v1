@@ -1,0 +1,14 @@
+<div class="overlayer confirmation_box" id="global_confirmation_box">
+	<div class="message_box_container">
+		<span class="message_box_title">Voulez-vous vraiment effectuer cette action? </span>
+		<div class="button-0-container">
+			<span class="button-0 cancel" id="global_confirmation_box_cancel_bt">Annuler</span>
+			<span class="button-0 valid" id="global_confirmation_box_valid_bt">Confirmer</span>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$('#global_confirmation_box_cancel_bt').on('click', function(){
+		$('#global_confirmation_box').css('display','none');
+	});
+</script>		

@@ -1,0 +1,65 @@
+{{form_start(write_form , {'attr':{'id':'writeForm'}} )}}
+	<script type="text/javascript">
+		var categoryinfo = {
+			{% for line in data %}
+			{% for id in line %}
+				'{{id.id}}':{
+					'category':'{{id.name}}',
+					'sub_categorys':[
+						{% for subcategory in id.subcategorys %}
+							'{{subcategory}}',
+						{% endfor %}
+					],
+					'value':'{{id.id}}',
+				},
+			{% endfor %}
+			{% endfor %}				
+		};
+	</script>
+	<div class="article-form-options">
+		<ul class="article-form-options-container">
+			<li class="form-options i1">
+				{{form_label(write_form.lang, "Choisissez la langue")}}
+				<div class="options-container">
+					{{form_widget(write_form.lang, {'attr':{'class':'article-form-i select'}})}}
+				</div>
+			</li>
+			<li class="form-options i2">
+				{{form_label(write_form.category, "Sélectionnez une catégorie")}}
+				<div class="options-container">
+					{{form_widget(write_form.category, {'attr':{'class':'article-form-i select'}})}}
+				</div>
+			</li>
+			<script type="text/javascript" src="{{asset("public/js/writeArticleCategory.js")}}"></script>
+			<li class="form-options i3">
+				{{form_label(write_form.sub_category, "Choisissez une sous-catégorie")}}
+				<div class="options-container">
+					{{form_widget(write_form.sub_category, {'attr':{'class':'article-form-i select'}})}}
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="article-form-c">
+		{{form_label(write_form.title, "Title")}}
+		{{form_widget(write_form.title, {'attr':{'placeholder':'Entrez le title d\'article (255 caractères au max.)','class':'article-form-i title'}})}}
+		{{form_label(write_form.introduction, "Introduction")}}
+		{{form_widget(write_form.introduction, {'attr':{'placeholder':'Entrez l\'introduction d\'article','class':'article-form-i introduction'}})}}
+		{{form_label(write_form.article, "Article")}}
+		{{form_widget(write_form.article, {'attr':{'placeholder':'Saisissez l\'article ici (500 caractères au min.)','class':'article-form-i article'}})}}
+	</div>
+	{{include('backend/includes/articleBundle/_addArticleCoverPopUp.html.twig')}}
+{{form_end(write_form)}}
+	<div class="article-form-bt">
+		<button class="bt-global" id="article-form-bt">Suivant</button>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#article-form-bt').on('click', function(){
+					$('html, body').animate({scrollTop: 0}, 300);
+					$('#articleCover-w').css({
+						'display':'block',
+					})
+				});
+			});
+		</script>
+	</div>
+

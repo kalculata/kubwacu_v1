@@ -1,0 +1,103 @@
+{% for message in app.flashes('success') %}
+	<div class="message-banner" style="width:500px">
+		<span class="message success">
+			Le compte de <strong style="color:#fff10c">{{message}}</strong> a été créé
+		</span>
+	</div>	
+{% endfor %}
+{{form_start(add_user_form)}}
+<ul class="add-user-c">
+	<li class="add-user-i">
+		<ul class="add-user-group">
+			<li class="add-user-group-i g1">
+				{{form_label(add_user_form.familyname, "Nom")}}
+				{{form_widget(add_user_form.familyname, {'attr':{
+					'class':'add-user-input g1',
+					'placeholder':'Entrez le nom'
+				}})}}
+			</li>
+			<li class="add-user-group-i g1">
+				{{form_label(add_user_form.firstname, "Prénom")}}
+				{{form_widget(add_user_form.firstname, {'attr':{
+					'class':'add-user-input g1',
+					'placeholder':'Entrez le prénom'
+				}})}}
+			</li>
+			<li class="add-user-group-i g1">
+				{{form_label(add_user_form.username, "Nom d'utilisateur")}}
+				{{form_widget(add_user_form.username, {'attr':{
+					'class':'add-user-input g1',
+					'placeholder':'Entrez le pseudo'
+				}})}}
+			</li>
+		</ul>
+	</li>
+	<li class="add-user-i">
+		<ul class="add-user-group">
+			<li class="add-user-group-i g2">
+				{{form_label(add_user_form.tel, "Téléphone")}}
+				{{form_widget(add_user_form.tel, {'attr':{
+					'class':'add-user-input g2',
+					'placeholder':'Ex: +25775656002'
+				}})}}
+			</li>
+			<li class="add-user-group-i g2">
+				{{form_label(add_user_form.email, "Email")}}
+				{{form_widget(add_user_form.email, {'attr':{
+					'class':'add-user-input g2',
+					'placeholder':'Entrez l\'addresse email'
+				}})}}
+			</li>
+		</ul>
+	</li>
+	<li class="add-user-i">
+		<ul class="add-user-group">
+			<li class="add-user-group-i">
+				{{form_label(add_user_form.sexe, "Sexe")}}
+				{{form_widget(add_user_form.sexe, {'attr':{
+					'class':'add-user-sexe',
+				}})}}
+			</li>
+			<li class="add-user-group-i">
+				{{form_label(add_user_form.nationality, "Nationalité")}}
+				{{form_widget(add_user_form.nationality, {'attr':{
+					'class':'add-user-nationnality',
+					'placeholder':'Entrez la nationalité',
+					'value':'Burundaise'
+				}})}}
+			</li>
+			<li class="add-user-group-i">
+				{{form_label(add_user_form.occupation, "Occupation")}}
+				{{form_widget(add_user_form.occupation, {'attr':{
+					'class':'add-user-occupation',
+					'placeholder':'Ex: Etudiant ou Enseignant'
+				}})}}
+			</li>
+			<li class="add-user-group-i">
+				<label class="required" for="admin_roles">Autorité</label>
+				<select name="admin[roles]" id="admin_roles" class="add-user-role">
+					<option value="ROLE_BLOGGER">Bloggeur</option>
+					<option value="ROLE_READER">Lecteur</option>
+					<option value="ROLE_ADMIN">Administrateur</option>
+				</select>
+			</li>
+		</ul>
+	</li>
+	<li class="add-user-i">
+		{{form_label(add_user_form.biography, "Biographie")}}
+		{{form_widget(add_user_form.biography, {'attr':{
+			'class':'add-user-biography',
+			'placeholder':'Ex: la passion, proverbe, etc...'
+		}})}}
+	</li>
+	<li class="add-user-i">
+		{{form_label(add_user_form.password, "Mot de passe")}}
+		{{form_widget(add_user_form.password, {'attr':{
+			'class':'add-user-password',
+			'placeholder':'Entrez le mot de passe',
+			'autocomplete':'off'
+		}})}}
+	</li>
+</ul>
+<button class="bt-global" type="submit">Enregister</button>
+{{form_end(add_user_form)}}

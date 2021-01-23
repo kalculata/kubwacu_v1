@@ -1,0 +1,18 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+	{{parent()}}
+	<link rel="stylesheet" type="text/css" href="{{asset('public/css/printArticle.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{asset('public/css/newsFeed.css')}}">
+	<meta property="og:image" content="https://www.kubwacu.com/public/data/cover/{{article_cover}}" />
+	<meta property="og:image:secure_url" content="https://www.kubwacu.com/public/data/cover/{{article_cover}}" />
+	<meta property="og:image:type" content="image/png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="627" />
+	<meta property="og:image:alt" content="{{article_title}}" />
+
+{% endblock %}
+{% block title %}{{article_title}} | {{ parent() }}{% endblock %}
+{% block header %}{{ include('frontend/includes/main/_header.html.twig') }}{% endblock %}
+{% block main %}{{ include('frontend/includes/article/_print.html.twig') }}{% endblock %}
+{% block footer %}{{ include('frontend/includes/main/_footer.html.twig') }}{% endblock %}

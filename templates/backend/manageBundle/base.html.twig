@@ -1,0 +1,27 @@
+{% extends 'backend/layout.html.twig' %}
+{% block stylesheets %}
+	{{parent()}}
+	<link rel="stylesheet" type="text/css" href="{{asset("/public/css/backend/management.css")}}">
+{% endblock %}
+{% block main %}
+	<div class="management-w">
+		<div class="management-sidebar">
+			<ul class="management-onglets-l">
+				<li><a href="{{path("manage_user_add")}}"  class="management-onglets-i"><i class="fab fa-blogger-b"></i>Bloggeurs</a></li>
+				<li><a href=""  class="management-onglets-i"><i class="fas fa-file"></i>Articles</a></li>
+				<li><a href="{{path("manage_categorys")}}"  class="management-onglets-i"><i class="fas fa-folder-open"></i>Catégories</a></li>
+			</ul>
+		</div>
+		<div class="management-inner">
+			<header class="management-h">
+				<div class="title">{% block management_title %}{% endblock %}</div>
+				<div class="options">
+					<ul class="options-container">
+						{% block management_header %}{% endblock %}
+					</ul>
+				</div>
+			</header>
+			{% block management %}{% endblock %}
+		</div>
+	</div>
+{% endblock %}

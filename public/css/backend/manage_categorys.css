@@ -1,0 +1,128 @@
+.manage-ctg-l-container{
+	flex:1;
+	display: flex;
+	flex-wrap: wrap;
+}
+.manage-ctg-w{
+	padding: 10px;
+	display: flex;
+}
+.manage-ctg-forms{
+	width: 50%;
+	padding: 10px;
+}
+label,button{
+	display: block;
+}
+.manage-ctg-l{
+	flex:1;
+	border-left: 3px solid #1565c0;
+	padding: 10px ;
+}
+.ctg-add,.sub-ctg-add{
+	border:1px solid #ccc;
+	padding: 10px;
+	margin: 10px 0;
+	background-color: #eee
+}
+label{
+	font-size: 0.9em;
+	margin-bottom: 5px
+}
+.category,#sub_category{
+	width: 98%;
+	padding: 0;
+	height: 30px;
+	font-size: 0.9em;
+	padding: 0 3px 0 5px;
+	border:1px solid #1565c0;
+}
+#sub_category{
+	width: 100%;
+}
+.manage-ctg-l-i{
+	border-bottom:1px solid #ccc;
+	border-top:1px solid #ccc;
+	font-size: 0.9em;
+	width: 90%;
+}
+.manage-ctg-category:hover{
+	background-color: #F5F5F5;
+}
+.manage-ctg-l-i .logo{
+	background-color: #BDBDBD;
+	color: #101316;
+}
+.manage-ctg-l-i .logo:hover{
+	cursor: pointer;
+}
+.manage-ctg-category{
+	display:flex;
+	justify-content: space-between;
+	background-color: #eee;
+	padding: 10px;
+}
+.manage-ctg-subcategory{
+	padding: 10px 0;
+	padding-left: 30px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.subcategory{
+	background-color: #ccc;
+	color: #101316;
+	padding: 3px 5px;
+	width: 90%;
+	margin: 5px 0px;
+}
+#manage-ctg-delete,.manage-sctg-delete{
+	display: block;
+	cursor: pointer;
+	position: relative;
+		top: 8px
+}
+
+#manage-ctg-delete:hover,.manage-sctg-delete{
+	color: #d50000;
+}
+#pop-up{
+	position:fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+	background-color: rgba(0,0,0,0.6);
+	width:100%;
+	height: 100%;
+	display: none;
+}
+.message-c{
+	background-color: #fff;
+	width: 450px;
+	margin: 15% auto;
+	padding: 10px;
+	text-align: center;
+	font-size: 0.9em
+}
+.message-c #subcategory-todelete{
+	color: #d50000
+}
+.message-c #category-container{
+	color: #00897B
+}
+.pop-up-choise{
+	display: flex;
+	justify-content: center;
+}
+.choise{
+	margin: 0 10px;
+	color: #fff;
+	padding: 5px 15px;
+	cursor: pointer;
+}
+.choise.yes{
+	background-color: #d50000;
+}
+.choise.no{
+	background-color: #1565c0;
+}

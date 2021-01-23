@@ -1,0 +1,232 @@
+/*main header begin*/
+.site-banner-container{
+	background-color: #101316;
+	padding: 10px 5%;
+	display: flex;
+	z-index: -1000;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.site-banner-logo{
+	width: 20%;
+	margin: 0 10px 0 0;
+	position: relative;
+		top: 3px
+}
+.site-banner-logo img{
+	height: 22px;
+}
+.site-banner-c{
+	flex:1;
+	text-align: right;
+}
+.site-search{
+	z-index: 1000;
+}
+.site-search,.site-login-bt{
+	display: inline-block;
+}
+#site-search-bar{
+	height: 25px;
+	width: 200px;
+	background-color: transparent;
+	border: 2px solid #ccc;
+	color: #fff;
+	padding: 2px 35px 2px 10px;
+	border-radius: 50px;
+	transition: 0.3s all;
+}
+#site-search-bar:focus{
+	width: 300px;
+	border-color: #fff;
+}
+.site-search-submit{
+	position: relative;
+		left: -40px;
+	background-color: transparent;
+	color: #ccc;
+	border: none;
+}
+.site-search-submit:hover{
+	color: #d36200
+}
+.site-search-submit i{
+	font-size: 15px;
+	margin:0;
+}
+.site-bt-i,.site-nav-bt-i{
+	color: #fff;
+	padding: 5px 8px;
+	display: inline-block;
+	margin: 0 10px;
+	font-size: 0.9em;
+}
+.site-bt-i.login,.site-nav-bt-i{
+	background-color: #1565c0;
+}
+.site-bt-i.signup{
+	background-color: #d36200;
+}
+.site-bt-i.login:hover,.site-nav-bt-i:hover{
+	background-color: #fff;
+	color: #1565c0;
+}
+.site-bt-i.signup:hover{
+	background-color: #fff;
+	color: #d36200;
+}
+.site-nav{
+	background-color: #fff;
+	box-shadow: 1px 1px 5px #101316;
+	height: 40px;
+	line-height: 40px;
+}
+.site-nav-l{
+	display: flex;
+	justify-content: center;
+	z-index: 9999;
+}
+.site-nav-i{
+	padding: 0px 10px;
+	color: #000;
+	transition: 0.1s all;
+	display: block;
+	font-size: 0.9em;
+	animation: show 0.2s linear;
+}
+@keyframes show {
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+.site-nav-i:hover{
+	background-color: #d36200;
+	color: #fff;
+}
+.site-nav-toggle{
+	height: 100%;
+	width: 35px;
+	margin: 0px 20px;
+	align-items: center;
+	display: none;
+	float: left;
+}
+.site-nav-toggle-i,.site-nav-toggle-i:before,.site-nav-toggle-i:after{
+	content: "";
+	height: 3px;
+	width:100%;
+	background: #101316;
+	position: relative;
+	display: block;
+	margin: 5px 0px;
+	transition: 0.4s all;
+}
+.site-nav-toggle-i:before{
+	top: 5px
+}
+.site-nav-toggle-i:after{
+	top:-23px
+}
+.site-nav-l.isClick{
+	transform: translate(0);
+}
+.site-nav-toggle.isClick span.site-nav-toggle-i{
+	background-color: transparent;
+}
+.site-nav-toggle.isClick span.site-nav-toggle-i:before,
+.site-nav-toggle.isClick span.site-nav-toggle-i:after{
+	transform-origin: center;
+	transform: rotate(45deg);
+	top: -10px;
+	background-color: #d36200
+}
+.site-nav-toggle.isClick span.site-nav-toggle-i:after{
+	transform: rotate(-45deg);
+		top: -10px
+}
+.site-login-nav-bt{
+	float: right;
+	display: none;
+}
+.site-nav-bt-i{
+	padding: 0px 8px;
+	border: 1px solid #1565c0;
+	height: 30px;
+	line-height: 30px;
+}
+/*main header end*/
+
+/*responsive design begin for width max : 1000px*/
+@media screen and (max-width: 1000px){
+	/*main header responsive begin*/
+	.site-nav-toggle{
+		display: flex;
+	}
+	.site-login-bt{
+		display: none;
+	}
+	.site-nav-l{
+		position: absolute;
+			top: 95px;
+		flex-direction: column;
+		background-color: #fff;
+		box-shadow: 0px 1px 5px #101316;
+		width: 300px;
+		transform: translateX(-200%);
+		transition: 0.4s all;
+	}
+	.site-nav-i{
+		padding:0 35px;
+	}
+	.site-login-nav-bt{
+		display: block;
+	}
+	/*main header responsive end*/
+}
+/*responsive design end for width max : 1000px */
+
+/*responsive design begin for width max : 565px*/
+@media screen and (max-width: 565px){
+	/*main header responsive begin*/
+	.site-banner-container{
+		padding: 10px 0px;
+	}
+	.site-banner-logo{
+		width: 100%;
+		text-align: center;
+		margin-bottom: 10px
+	}
+	.site-search{
+		width: 100%;
+		text-align: center;
+		
+	}
+	.site-search-c{
+		position: relative;
+			left: 20px
+	}
+	#site-search-bar:focus{
+		width: 80%
+	}
+	.site-nav-l{
+		top: 130px
+	}
+	/*main header responsive end*/
+}
+/*responsive design end for width max : 565px */
+
+/*responsive design begin for width max : 565px*/
+@media screen and (max-width: 400px){
+	/*main header responsive begin*/
+	#site-search-bar{
+		width: 70%
+	}
+	#site-search-bar:focus{
+		width: 70%
+	}
+	/*mainheader responsive end*/
+}
+/*responsive design end for width max : 565px */

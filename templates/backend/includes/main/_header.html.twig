@@ -1,0 +1,45 @@
+<header class="header-w">
+	{{ include('frontend/includes/main/_banner_logo.html.twig') }}
+	<div class="header-c">
+		<div class="header-links">
+			<ul class="header-links-container">
+				<li class="header-link-profil">
+					<div class="header-bt-profil-cover-toogle">
+						<i class="fas fa-user"></i>
+					</div>
+					<span>
+						<a href="" class="header-bt-profil-name">{{app.user.firstname}}</a>
+					</span>
+				</li>
+				<li><a href="{{path("administration_home")}}" class="header-links-i"><i class="fas fa-home"></i>Home</a></li>
+				<li><a href="{{path("write_article")}}" class="header-links-i"><i class="fas fa-edit"></i>Créer un article</a></li>
+				<!--<li><a href="{{path("get_articles")}}" class="header-links-i"><i class="fas fa-list"></i>Mes articles</a></li>
+				<li><a href="" class="header-links-i"><i class="fas fa-bell"></i>Notifications</a></li>-->
+				{% if is_granted('ROLE_ADMIN') %}
+					<li><a href="{{path("manage_home")}}" class="header-links-i"><i class="fas fa-tools"></i>Administration</a></li>
+				{% endif %}
+				<li class="header-link-logout"><a href="{{path("admin.logout")}}"><i class="fas fa-sign-out-alt"></i>Déconnexion</a></li>
+			</ul>
+		</div>
+		<div class="header-bts">
+			<ul class="header-bts-container">
+				<li class="header-bt-profil">
+					<div class="header-bt-profil-cover">
+						<i class="fas fa-user"></i>
+					</div>
+					<span><a href="" class="header-bt-profil-name">{{app.user.firstname}}</a></span>
+				</li>
+				<li><a href="{{path("admin.logout")}}" class="header-bts-logout"><span class="header-bts-text">Déconnexion</span><i class="fas fa-sign-out-alt"></i></a></li>
+			</ul>
+		</div>
+		<div id="toggle-w">
+			<div class ="toggle"></div>
+		</div>
+		<script type="text/javascript">
+			$('#toggle-w').on('click', function(){
+				$('.toggle').toggleClass('isClick');
+				$('.header-links-container').toggleClass('isOpen');
+			});
+		</script>
+	</div>
+</header>

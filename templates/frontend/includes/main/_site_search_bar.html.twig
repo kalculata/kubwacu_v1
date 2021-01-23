@@ -1,0 +1,8 @@
+<div class="site-search">
+	<form method="GET" action="{{path('search_bundle')}}">
+		<div class="site-search-c">
+			<input type="text" name="q" id="site-search-bar" value="{% if query is defined %}{{query}}{% endif %}" placeholder="Recherche" required>
+			<button class="site-search-submit"><i class="fas fa-search"></i></button>
+		</div>
+	</form>
+</div>

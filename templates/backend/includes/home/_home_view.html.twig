@@ -1,0 +1,32 @@
+<div class="home-w">
+	<div class="home-container">
+		<ul class="home-c">
+			<li class="home-l-elements">
+				<a href="{{path("write_article")}}" class="home-i-container">
+					<div class="home-i-cover"><i class="fas fa-edit"></i></div>
+					<span class="home-i-link">Créer un article</span>
+				</a>
+			</li>
+			<!--<li class="home-l-elements">
+				<a href="{{path("get_articles")}}" class="home-i-container">
+					<div class="home-i-cover"><i class="fas fa-list-alt"></i></div>
+					<span class="home-i-link">Mes articles</span>
+				</a>
+			</li>
+			<li class="home-l-elements">
+				<a href="" class="home-i-container">
+					<div class="home-i-cover"><i class="fas fa-bell"></i></div>
+					<span class="home-i-link">Notifications</span>
+				</a>
+			</li>-->
+			{% if is_granted('ROLE_ADMIN') %}
+				<li class="home-l-elements">
+					<a href="{{path("manage_home")}}" class="home-i-container">
+						<div class="home-i-cover"><i class="fas fa-tools"></i></div>
+						<span class="home-i-link">Administration</span>
+					</a>
+				</li>
+			{% endif %}
+		</ul>
+	</div>
+</div>

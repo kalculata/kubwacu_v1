@@ -1,0 +1,17 @@
+<div id="result-w">
+	<div class="loader" style="display:block"></div>
+	<div class="result-content">
+		<div class="articles-result-w">
+			<header class="result-h">
+				<h1 class="result-main-t"><span id="result-nombre"></span> pour "{{query}}"</h1>
+			</header>
+			<div id="articles-result"></div>
+			<div class="articles-result-pagination"></div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var page_active = parseInt("{{page}}"),
+		query = "{{query}}";
+</script>
+<script type="text/javascript" src="{{asset('public/js/main_search.js')}}"></script>

@@ -1,0 +1,38 @@
+body{
+	margin: 0;
+	background: #CFD8DC;
+	font-family: arial
+}
+header{
+	background: #101213;
+	height: 55px;
+	text-align: center;
+	line-height: 55px
+}
+img{
+	height: 25px;
+	position: relative;
+		top:5px;
+}
+.main{
+	background: #fff;
+	width: 600px;
+	padding: 10px;
+	border:1px solid #ccc;
+	border-radius: 3px;
+	margin: 10% auto;
+}
+.message{
+	text-align: center;
+	font-size: 1.2em;
+}
+footer{
+	text-align: center;
+}
+@media screen and (max-width: 750px){
+	/*main header responsive begin*/
+	.main{
+		width: 80%;
+	}
+	/*mainheader responsive end*/
+}

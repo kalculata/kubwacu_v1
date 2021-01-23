@@ -1,0 +1,41 @@
+security:
+    encoders: 
+        App\Entity\Admin: 
+            algorithm: bcrypt
+            cost: 12
+    role_hierarchy:
+        ROLE_SUP_ADMIN: [ROLE_ADMIN, ROLE_BLOGGER, ROLE_READER]
+        ROLE_ADMIN: [ROLE_BLOGGER, ROLE_READER]
+        ROLE_READER: [ROLE_BLOGGER]
+    providers:
+        from_database:
+            entity: 
+                class: App\Entity\Admin
+                property: username
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+          #  provider: from_database
+          anonymous: true
+
+            # http_basic: true
+          form_login:
+            login_path: admin_login
+            check_path: admin_login
+            default_target_path: /admin/home
+          logout:
+            path:  admin.logout
+            target: admin_login
+            # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#firewalls-authentication
+
+            # https://symfony.com/doc/current/security/impersonating_user.html
+            # switch_user: true
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+         - { path: ^/admin, roles: [ROLE_ADMIN, ROLE_BLOGGER, ROLE_SUP_ADMIN, ROLE_READER]}
+        # - { path: ^/profile, roles: ROLE_USER }

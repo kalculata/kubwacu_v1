@@ -1,0 +1,43 @@
+<div class="team_view_container">
+	<div class="teamList_container">
+		<div class="teamList">
+			<h3>Equipe Kubwacu</h3>
+			<div class="teamList-items" id="teamList_items">
+				<div class="loader" style="display:block"></div>
+				<div class="teamList_content" id="teamList_content"></div>
+			</div>
+		</div>
+	</div>								
+</div>
+{{include('frontend/includes/web/_team_member.html.twig')}}
+<script type="text/javascript">
+	$('#teamList_items .loader').css('display','block');
+	$('#teamList_items .teamList_content').css('display','none');
+	$.ajax({
+		url: 'https://www.kubwacu.com/public/api/getAdminListSec/100',
+		dataType: 'json'
+	}).done(function(data){
+		data.forEach(function(admin, index){
+			let _admin =
+				'<div class="teamList-card">'+
+					'<span class="team_id" style="display:none">'+admin.id+'</span>'+
+					'<div class="profil">'+
+						'<i class="fas fa-user"></i>'+
+					'</div>'+
+					'<div class="infos">'+
+						'<div class="name">'+admin.firstname+' '+admin.familyname+'</div>'+
+						'<div class="function">'+admin.job+'</div>'+
+					'</div>'+
+				'</div>';
+
+			$('#teamList_items .teamList_content').append(_admin);
+		})
+		$('#teamList_items .loader').css('display','none');
+		$('#teamList_items .teamList_content').css('display','flex');
+	});
+	//pop-up options
+	$('#team_member_profil_hidden_bt').on('click', function(){
+		$('#team_member_profil').css('display','none');
+	});
+	
+</script>

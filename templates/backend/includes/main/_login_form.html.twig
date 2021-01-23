@@ -1,0 +1,44 @@
+{% block body %}
+	<div id="page-wrapper">
+		<header class="form-info">
+			{% if error %}
+				<div class="message-banner">
+					<span class="message error">{{error.message}}</span>
+				</div> 
+			{% endif %}
+		</header>
+		<div class="form-c">
+			<h1 class="form-t">KUBWACU</h1>
+			<div class="form-inner">
+				<form method="POST" action="">
+					<ul class="form-i-c">
+						<li class="form-i">
+							<label>Nom d'utilisateur</label>
+							<input type="text" name="_username" placeholder="Entrez votre nom d'utilisateur" autocomplete="off">
+						</li>
+						<li class="form-i">
+							<label>Mot de passe</label>
+							<input type="password" name="_password" placeholder="Entrez votre mot de passe" autocomplete="off">
+						</li>
+						<li class="form-i connexion-bt">
+							<button class="form-bt bt-global" id="form-bt" type="submit">Connexion</button>
+							<div id="form-loader"></div>
+						</li>
+						<script type="text/javascript">
+						/*$('#form-bt').on('click', function(e){
+							e.preventDefault();
+							$('#form-loader').css('display','block')
+						});*/
+						</script>
+					</ul>
+				</form>
+			</div>
+		</div>
+		<footer class="form-footer">
+			<ul class="form-footer-links">
+				<li><span style="font-weight:bold">© 2019 - 2020 | KUBWACU | Tous les droits sont réservés</span></li>
+				<li><a href="/" class="footer-link-i">Retourner sur le site</a></li>
+			</ul>
+		</footer>
+	</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+	{{parent()}}
+	<link rel="stylesheet" type="text/css" href="{{asset('public/css/searchBundle.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('public/css/newsFeed.css')}}">
+{% endblock %}
+{% block title %}{{title}} | {{parent()}}{% endblock %}
+{% block header %}{{ include('frontend/includes/main/_header.html.twig') }}{% endblock %}
+{% block main %}{{ include('frontend/includes/searchBundle/_result.html.twig') }}{% endblock %}
+{% block footer %}{{ include('frontend/includes/main/_footer.html.twig') }}{% endblock %}

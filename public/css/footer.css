@@ -1,0 +1,120 @@
+/*footer begins*/
+.site-footer{
+	background-color: #263238;
+	width: 100%;
+}
+.site-footer-c{
+	margin: 0 200px;
+	padding: 10px;
+}
+.site-footer-bottom{
+	margin: 10px 0px
+}
+.site-socialMedia li{
+	margin: 5px 10px;
+}
+.site-socialMedia{
+	display: flex;
+	justify-content: center;
+	padding: 5px;
+	flex-wrap: wrap;
+}
+.site-socialMedia .link{
+	color: #ccc
+}
+.site-socialMedia .link:hover,
+.footer-categorys .link:hover,
+.footer-supp-links .link:hover
+{
+	color: #fff;
+}
+.site-copyright{
+	color: #fff;
+	padding: 10px 0px 30px 0px;
+	text-align: center;
+	border-top: 1px solid  #fff;
+}
+.footer-items{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+.footer-categorys,.footer-supp-links{
+	width: 30%;
+}
+.footer-categorys .links-c{
+	padding: 0 20px
+}
+.footer-categorys .link,.footer-supp-links .link{
+	font-size: 1em;
+	color: #ccc;
+	margin: 5px 0;
+	display: block;
+}
+.footer-i-title{
+	color: #fff;
+	margin:0 0 10px 0;
+	font-size: 1.5em
+}
+.footer-supp-links,.footer-contact-links{
+	margin-top: 35px;
+}
+.footer-contact-links{
+	 width: 230px;
+	 color: #fff10c;
+	 text-align: center;
+}
+.footer-contact-links a{
+	 display: block;
+	 background-color: #d36200;
+	 color: #fff;
+	 padding:  10px;
+	 text-align: center;
+	 margin: 10px;
+	 border-radius: 3px;
+	 transition: 0.4s all;
+}
+.footer-contact-links a:hover{
+	 background-color: #DD2C00;
+}
+/*footer end*/
+
+/*responsive design begin for width max : 1000px*/
+@media screen and (max-width: 1000px){
+	/*footer responsive begin*/
+	.site-footer-c{
+		justify-content: center;
+		margin: 0 100px
+	}
+	.footer-categorys,.footer-supp-links{
+		width: 40%;
+	}
+	/*footer responsive end*/
+}
+/*responsive design end for width max : 1000px */
+
+/*responsive design begin for width max : 565px*/
+@media screen and (max-width: 565px){
+
+	/*footer responsive begin*/
+	.site-footer-c{
+		justify-content: center;
+		margin: 0 10px
+	}
+	.footer-categorys,.footer-supp-links{
+		width: 40%;
+	}
+	/*footer responsive end*/
+}
+/*responsive design end for width max : 565px */
+
+/*responsive design begin for width max : 565px*/
+@media screen and (max-width: 400px){
+	/*footer responsive begin*/
+	.site-footer-c{
+		justify-content: center;
+		margin: 0 10px
+	}
+	/*footer responsive end*/
+}
+/*responsive design end for width max : 565px */

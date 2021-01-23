@@ -1,0 +1,21 @@
+.footer-w{
+	margin:20px 0;
+	font-size: 0.9em
+}
+.footer-c{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.footer-c li{
+	margin-top: 10px;
+	text-align: center;
+}
+.footer-i{
+	margin: 0 10px;
+	color: #101316;
+}
+.footer-i.link:hover{
+	border-bottom: 1px solid #101316;
+}
+

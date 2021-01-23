@@ -1,0 +1,66 @@
+.add-user-w{
+	padding: 10px 30px;
+}
+label{
+	display: block;
+	color: #101213;
+	font-size: 0.9em
+}
+input{
+	height: 23px;
+	font-size: 14px;
+	padding: 2px;
+	padding-left: 5px;
+	border:1px solid #1565c0;
+}
+textarea{
+	font-size: 14px;
+	resize: none;
+	border:1px solid #1565c0;
+	padding:10px;
+	width: 97.5%;
+}
+input:focus{
+	border-color:#d36200;
+}
+.add-user-group{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+}
+.add-user-i{
+	margin-top: 10px
+}
+.add-user-group-i.g1{
+	width: 30%;
+}
+.add-user-input.g1{
+	width: 97.5%;
+}
+.add-user-group-i.g2{
+	width: 45%;
+}
+.add-user-input.g2{
+	width: 97.5%;
+}
+.add-user-password{
+	width: 40%;
+}
+.add-user-sexe{
+	font-size: 14px;
+	padding: 2px;
+	height: 30px;
+	-webkit-appearance: button;
+	outline: none;
+	border: none;
+	width: 100px;
+	text-align: center;
+	background: #d36200;
+	color: #fff;
+}
+.add-user-role{
+	height: 30px;
+	border:1px solid #1565c0;
+}

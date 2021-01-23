@@ -1,0 +1,10 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" type="text/css" href="{{asset("public/css/team.css")}}">
+	{{parent()}}
+{% endblock %}
+{% block title %}Notre équipe | {{parent()}}{% endblock %}
+{% block header %}{{ include('frontend/includes/main/_header.html.twig') }}{% endblock %}
+{% block main %}{{ include('frontend/includes/web/_team.html.twig') }}{% endblock %}
+{% block footer %}{{ include('frontend/includes/main/_footer.html.twig') }}{% endblock %}

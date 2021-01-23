@@ -1,0 +1,22 @@
+{% extends 'backend/layout.html.twig' %}
+
+{% block title %}Ecrire un article | {{parent()}} {% endblock %}
+{% block stylesheets %}
+	{{parent()}}
+	<link rel="stylesheet" type="text/css" href="{{asset("public/css/backend/article.css")}}">
+	<script type="text/javascript" src="{{asset("public/js/croppie.min.js")}}"></script> 
+	<link rel="stylesheet" type="text/css" href="{{asset("public/css/croppie.min.css")}}">
+{% endblock %}
+{% block main %}
+	{% for message in app.flashes('success') %}
+		<div class="message-banner">
+			<span class="message success">
+				{{message}}
+			</span>
+		</div>	
+	{% endfor %}
+	<div class="article-write-w">
+		{{render(controller('App\\Controller\\Admin\\AdminArticleController:writeForm'))}}
+	</div>
+{% endblock %}
+

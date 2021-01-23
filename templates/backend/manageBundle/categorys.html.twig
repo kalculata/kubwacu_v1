@@ -1,0 +1,22 @@
+{% extends 'backend/manageBundle/base.html.twig' %}
+
+{% block title %}Gérer les catégories - {{parent()}}{% endblock %}
+
+{% block stylesheets %}
+	{{parent()}}
+	<link rel="stylesheet" type="text/css" href="{{asset("public/css/backend/manage_categorys.css")}}">
+	<link rel="stylesheet" type="text/css" href="ccs.css">
+{% endblock %}
+
+{% block management_title %}
+	<h1><i class="fas fa-folder-open"></i> Gestion des catégories</h1>
+{% endblock %}
+
+{% block management_header %}
+	<li><a href="" class="options-i">Ajout & Suppression</a></li>
+	<li><a href="" class="options-i">Statistiques</a></li>
+{% endblock %}
+
+{% block management %}
+	{{include('backend/includes/manageBundle/_manage_categorys.html.twig')}}
+{% endblock %}

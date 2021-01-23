@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <title id="page-title">{% block title %}Kubwacu{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="/public/css/main.css">
+        <script type="text/javascript" src="/public/libraries/jquery.js"></script>
+        <link rel="stylesheet" type="text/css" href="/public/css/fonts.css">
+        <link rel="icon"  href="/public/data/web/page_logo.png">
+        {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="/public/css/header.css">
+        <link rel="stylesheet" type="text/css" href="/public/css/footer.css">
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+            <div id="page-wrapper">
+                {% block header %}{% endblock %}
+                <main class="site-content">{% block main %}{% endblock %}</main>
+                {% block footer %}{% endblock %}
+            </div>
+            {% block javascript %}
+                <script type="text/javascript" src="{{ asset('/public/js/site_nav_toggle.js') }}"></script>
+            {% endblock %}
+        {% endblock %}
+    </body>
+</html>

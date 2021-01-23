@@ -1,0 +1,21 @@
+<div class="category-h-title">
+	<h1 class="category-container-t"><i class="{{logotype}}"></i> {{category}}</h1>
+	<ul class="sub-category-l" id="sub-category-l">
+		<li><a href="{{path("changeCategory",{"category":category})}}" class="sub-category-i
+			{% if sub_category == 'all' %}selected{% endif %}">Tous</span></a>
+		{% for subcategory in sub_categorys %}
+			<li>
+				<a href="{{path("changeCategory",{"category":category,"sub_category":subcategory})}}" class="sub-category-i 
+				{% if subcategory ==sub_category %}selected{% endif %}">{{subcategory}}</a></li>
+		{% endfor %}
+	</ul>
+</div>
+
+<script type="text/javascript">
+	$('#sub-category-l').find('.sub-category-i').click(function(){
+		if($('.sub-category-i').hasClass('selected')){
+			$('.sub-category-i').removeClass('selected')
+			$(this).addClass('selected');
+		}
+	});
+</script>

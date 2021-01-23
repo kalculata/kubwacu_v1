@@ -1,0 +1,10 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+	{{parent()}}
+	<link rel="stylesheet" type="text/css" href="{{asset('public/css/newsFeed.css')}}">
+{% endblock %}
+{% block title %}Kubwacu | Actualités et Infos au Burundi et partout dans le monde{% endblock %}
+{% block header %}{{ include('frontend/includes/main/_header.html.twig') }}{% endblock %}
+{% block main %}{{ include('frontend/includes/newsFeed/_newsFeed.html.twig') }}{% endblock %}
+{% block footer %}{{ include('frontend/includes/main/_footer.html.twig') }}{% endblock %}

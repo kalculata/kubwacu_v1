@@ -1,0 +1,22 @@
+<div class="main">
+	<div class="home-news-feed">
+		<div class="news-feed-c">
+			<div id="newsFeed">
+				{{include('frontend/includes/newsFeed/_news_pub_alert.html.twig')}}
+				<div class="loader"></div>
+			</div>		
+		</div>
+		{{ include('frontend/includes/newsFeed/_most_read_news.html.twig') }}
+	</div>
+</div>
+<script type="text/javascript">
+	{% if sub_category is defined and category %}
+		var sub_category = "{{sub_category}}",
+			category = "{{category}}";
+	{% else %};
+		var category = 'null',
+			sub_category = 'null';
+	{% endif %}
+	var page_active = {{page}};
+</script>
+<script type="text/javascript" src="{{asset('public/js/newsFeed.js')}}"></script>

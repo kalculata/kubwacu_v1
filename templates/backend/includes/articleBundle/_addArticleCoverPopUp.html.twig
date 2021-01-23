@@ -1,0 +1,99 @@
+
+<div id="articleCover-w">
+	<div class="articleUploadCover">
+		<header class="articleUploadCover-h">
+			<ul class="articleUploadCover-h-c">
+				<li><span id="quit-bt"><i class="fas fa-times"></i></span></li>
+				<script type="text/javascript">
+					$('#quit-bt').on('click',function(){
+						$('#articleCover-w').css({
+							'display':'none'
+						});
+					});
+				</script>
+				<li><button id="publish-bt-noCover">Publier sans couverture</button></li>
+			</ul>
+		</header>
+		<div class="cover-container">
+			<div class="cover-c">
+				<div id="coverWorkStationBt">
+					<div id="uploaded_image">
+						<div class="uploaded_image-c">
+							<div class="uploaded_image-bts">
+								<span id="editUpload_image"><i class="fas fa-pen"></i></span>
+								<span id="quitUpload_image"><i class="fas fa-times"></i></span>
+							</div>
+							<img src="" id="preview">
+						</div>
+					</div>
+					{{form_widget(write_form.cover)}}
+					<!-- le button de publier -->
+					<button type="submit" class="bt-global articleSavebt" id="publish-bt-withCover">Publier</button>
+					<script type="text/javascript">
+						var label = $('#coverWorkStationBt').find('label').eq(0);
+						label.html('<span class="label"><i class="fas fa-camera"></i></span>');
+
+						$('#article_cover_cover').css('display','none');
+						var uploadbt = $('#article_cover').children('div');
+						uploadbt.nextAll().css('display','none');
+						//enregistrement de l'article
+						$(document).ready(function(){
+							$('#writeForm').on('submit', function(e){
+								$('#loading-w').css('display','block');
+								var image = $('#preview').attr('src');
+								$.ajax({
+									url : '{{path('save_article')}}',
+									type:"POST",
+							   		data:{
+							   			"image"	:image,
+							   			"lang" :
+							   				$('#article_lang').children('option:selected').val() ,
+							   			"category":
+							   				$('#article_category').children('option:selected').val(),
+							   			"sub_category":
+							   				$('#article_sub_category').children('option:selected').val(),
+							   			"title" : $('#article_title').val(),
+							   			"introduction" : $('#article_introduction').val(),
+							   			"article" : $('#article_article').val(),
+							   			"copyright":$('#article_cover_copyright').val(),
+							   			"description_cover":$('#article_cover_description').val(),
+							   		},
+							   		complete : function(){
+							   			$('#loading-w').css('display','none');
+							   			$('#succes-panel').css('display','block');
+							   		}
+								})
+								e.preventDefault();
+							})
+						});
+					</script>	
+					<span id="uploadbt-message">Cliquer sur l'icône pour sélectionner une couverture</span>	
+				</div>
+				<div id="coverWorkStation">
+					<div class="coverWorkStation-c">
+						<header class="coverWorkStation-h">
+							<span class="quit"><i class="fas fa-times"></i></span>
+							<div id="image_demo"></div>
+							<div id="upload-coverBt"><button id="addTempCover">ajouter</button></div>
+						</header>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="articleUploadCover-f"></footer>
+	</div>
+</div>
+<div id="loading-w">
+	<div class="loading-c"></div>
+</div>
+<div id="succes-panel">
+	<div class="succes-panel-c">
+		<i class="fas fa-check"></i>
+		<p>Votre l'article a été bien diffusé</p>
+		<p><a href="{{path('write_article')}}" class="bt-global">Ok</a></p>
+	</div>
+</div>
+<script type="text/javascript">
+	console.log($('#image_demo').height());
+</script>
+<script type="text/javascript" src="{{asset('public/js/writeArticle.js')}}"></script>
