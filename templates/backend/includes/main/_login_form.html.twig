@@ -36,7 +36,11 @@
 		</div>
 		<footer class="form-footer">
 			<ul class="form-footer-links">
-				<li><span style="font-weight:bold">© 2019 - 2020 | KUBWACU | Tous les droits sont réservés</span></li>
+				<li>
+					<span style="font-weight:bold">
+						© 2019 - {{ render(controller("App\\Service\\Blar_DateTime::getCurrentYear")) }} | KUBWACU | Tous les droits sont réservés
+					</span>
+				</li>
 				<li><a href="/" class="footer-link-i">Retourner sur le site</a></li>
 			</ul>
 		</footer>
