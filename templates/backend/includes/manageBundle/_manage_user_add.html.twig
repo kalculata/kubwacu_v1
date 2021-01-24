@@ -90,13 +90,25 @@
 			'placeholder':'Ex: la passion, proverbe, etc...'
 		}})}}
 	</li>
-	<li class="add-user-i">
-		{{form_label(add_user_form.password, "Mot de passe")}}
-		{{form_widget(add_user_form.password, {'attr':{
-			'class':'add-user-password',
-			'placeholder':'Entrez le mot de passe',
-			'autocomplete':'off'
-		}})}}
+	<li class="add_user_i">
+		<ul class="add-user-group">
+			<li class="add-user-group-i">
+				{{form_label(add_user_form.job, "Rôle")}}
+				{{form_widget(add_user_form.job, {'attr':{
+					'class':'add-user-password',
+					'placeholder':'Entrez le rôle sur le site',
+					'autocomplete':'off'
+				}})}}
+			</li>
+			<li class="add-user-group-i">
+				{{form_label(add_user_form.password, "Mot de passe")}}
+				{{form_widget(add_user_form.password, {'attr':{
+					'class':'add-user-password',
+					'placeholder':'Entrez le mot de passe',
+					'autocomplete':'off'
+				}})}}
+			</li>
+		</ul>
 	</li>
 </ul>
 <button class="bt-global" type="submit">Enregister</button>

@@ -29,6 +29,7 @@ class AdminType extends AbstractType
             ->add('nationality')
             ->add('biography', TextareaType::class)
             ->add('occupation')
+            ->add('job')
             ->add('password', PasswordType::class)
         ;
     }
