@@ -1,6 +1,8 @@
 <?php
 namespace App\Service;
 
+use Symfony\Component\HttpFoundation\Response;
+
 class Blar_DateTime extends \DateTime {
 
     /**
@@ -62,5 +64,11 @@ class Blar_DateTime extends \DateTime {
 		else{
 			return 'le '.$date_i->format('d/m/Y h:i');
 		}
+    }
+
+    public function getCurrentYear(){
+        // return current year 
+        $date = new \DateTime();
+        return new Response($date->format('Y'));
     }
 }

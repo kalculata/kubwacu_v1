@@ -1,6 +1,10 @@
 <footer class="footer-w">
 	<ul class="footer-c">
-		<li style="font-weight:bold"><span class="footer-i">© 2019 - 2020 | KUBWACU | Tous les droits sont réservés</span></li>
+		<li style="font-weight:bold">
+			<span class="footer-i">
+				© 2019 - {{ render(controller("App\\Service\\Blar_DateTime::getCurrentYear")) }} | KUBWACU | Tous les droits sont réservés
+			</span>
+		</li>
 		<li><a href="{{path("newsfeed")}}" target="_blank" class="footer-i link">Retourner sur le blog</a></li>
 		<li><a href="{{path("admin.logout")}}" class="footer-i link">Déconnexion</a></li>
 	</ul>
